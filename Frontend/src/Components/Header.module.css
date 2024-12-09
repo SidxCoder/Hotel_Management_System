@@ -1,0 +1,52 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+.content li{
+    transition: transform 0.2s ease-in-out;
+    font-size: 1.1rem;
+    color: whitesmoke;
+    /* background: url(../assets/hotel_video.mp4); */
+  }
+
+ .content li:hover{   
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 2px 5px rgb(167, 157, 157);
+}
+.landing nav{
+    position: sticky;
+}
+.logo{
+  margin-left: 4rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-shadow: 0px 2px 5px rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  font-family: 'Poppins', sans-serif;
+}
+.logo span{
+    color: red;
+}
+.text {
+    font-size: 3.5rem;
+    color: rgb(255, 255, 255);
+   font-family:cursive;
+    
+}
+.text span{
+    color: red;
+}
+
+
+.btnL{
+     padding: 0.4rem 0.6rem;
+     border: 1px solid rgb(0, 0, 0);
+}

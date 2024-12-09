@@ -1,0 +1,42 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* border: 1px solid; */
+}
+
+
+.hotelform Input{
+    border: 1px solid;
+    width: 40%;
+    height: 1.9rem;
+    border-radius: 0.5rem;
+    text-align: center;  
+    margin-bottom: 1rem; 
+    margin-left: 0.5rem;
+}
+.hotelform  h1{
+  width: 15rem;
+  margin-left: -15rem;
+ /* border-radius: 0.5rem; */
+    text-align: right;
+    display: inline-block;
+}
+
+.hotelform Select{
+    width: 40%;
+    height: 1.9rem;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.hotelform label{
+    display: inline-block;
+    width: 10rem;
+    text-align: right;
+}
