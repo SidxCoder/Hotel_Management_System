@@ -6,7 +6,8 @@ export default {
       backgroundImage: {
         'slider-bg': "url('/new pic2.jpeg')",
         'Auth-bg':"url('/image (2).jpg')",
-        'landing-bg':"url('/landing2.jpeg')"
+        'landing-bg':"url('/landing2.jpeg')",
+        'register-bg': "url('/register.avif')",
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
