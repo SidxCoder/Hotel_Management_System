@@ -1,7 +1,7 @@
 import { hotelValidator } from "../../config/helpers/validator.js"
 import hotel from "../../config/schema/hotel.schema.js"
 import { fileUpload } from "../Model/hotel.model.js"
-
+import bookings from "../../config/schema/booking.schema.js"
 
 
 export const addHotel = async(req,res)=>{
@@ -19,7 +19,7 @@ export const addHotel = async(req,res)=>{
         //     return res.status(401).json({msg: "data not in format"})
         // }
         const url = await fileUpload(file)
-        console.log("hii")
+        // console.log("hii")
         const response = await hotel.create({
             hotelName: body.name,
             area: body.area,
@@ -67,4 +67,57 @@ export const updateHotel = async(req,res)=>{
         return res.status(401).json({msg:"error while updating"})
         
     }
+}
+
+export const searchHotel = async(req,res)=>{
+    const body = req.body;
+    try{
+            
+        const parsedCheckInDate = new Date(checkInDate);
+        const parsedCheckOutDate = new Date(checkOutDate);
+
+
+        const hotels = await hotel.find({
+           
+           $and:[
+           {
+            $or: [
+                {hotelName: {$regex: new RegExp("^" + body.hotelName,"i")}},
+                {area: {$regex: new RegExp("^" + body.area,"i")}},
+                {city: {$regex: new RegExp("^" + body.city,"i")}}
+            ]
+        },
+        {
+            "availability.startDate": { $lte: parsedCheckInDate },
+            "availability.endDate": { $gte: parsedCheckOutDate }
+        }
+    ]
+        })
+        console.log(hotels)
+        res.json(hotels)
+    }catch(error){
+        console.log("error while search hotel",error)
+        res.json("error while searching hotels")
+    }
+}
+
+export const bookHotel= async(req,res)=>{
+    const body = req.body;
+     try {
+         const book = await bookings.create({
+            fromDate: body.fromDate,
+            toDate: body.toDate,
+            guests: body.guests,
+            RoomType: body.RoomType,
+            bookedBy: req.userId,
+            hotelId: body.hotelId
+         }) 
+         res.json({
+            msg:"hotel booked"
+         })
+     } catch (error) {
+        console.log("error while booking hotel", error);
+        res.status(403).json({msg:"error while booking hotel"})
+        
+     }
 }

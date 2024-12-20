@@ -18,11 +18,12 @@ const hotelSchema = new mongoose.Schema({
         required:true
     },
     price:{
-        type:String,
+        type:Number,
         required:true
     },
     unmarriedFriendly:{
         type:Boolean,
+       
         required:true
     },
     image:{
@@ -32,9 +33,10 @@ const hotelSchema = new mongoose.Schema({
     AcRoomA:{
         type: Boolean,
         required: true
+
     },
     NonAcRoomA:{
-        type: Boolean,
+        type: Boolean, 
         required: true
     },
     TotalAc: {
