@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import UserSignup from "../Model/UserSignup";
-import UserSignin from "../Model/UserSignin";
+import UserSignin from "../../Model/UserSignin";
+import UserSignup from "../../Model/UserSignup";
 
-import styles from "./UserAuth.module.css"
 const UserAuth = () => {
   const [position, setPosition] = useState("signup");
   return (

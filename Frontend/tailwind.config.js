@@ -11,7 +11,19 @@ export default {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        'logo': ["Pacifico", 'serif'],
     },
+    colors: {
+      secondary: "#12B7F2",
+      priamry: "#3286DB",
+      priamryBg: "#F4FAFF",
+      borders: "#2F323A",
+      bgColor: "#E2E1DF",
+      secondaryC: "#FF9100",
+      secondaryText: "#A69C88",
+      card: "#C7C4C2",
+      card2: "#C7C4C2"
+    }, 
       
     },
   },

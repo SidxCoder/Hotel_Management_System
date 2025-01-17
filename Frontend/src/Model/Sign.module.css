@@ -6,7 +6,7 @@
     /* border: 1px solid; */
   }
 
-  .sellersignup form,.userform form{
+  .sellersignup form, .sellersignin form, .userform form{
   padding-top: 1rem;
   width: 100vw;
   max-width: 300px;
@@ -17,11 +17,11 @@
 }
 
 
-.userform label{
+.userform label ,.sellersignup label,.sellersignin form {
   margin-bottom: 0.5rem;
   color: rgb(255, 255, 255);
 }
-.sellersignup Input, .userform Input{
+.sellersignup Input,.sellersignin Input, .userform Input{
   text-align: center;
   margin-bottom: 0.5rem;
   font-size: 1rem;
@@ -29,8 +29,9 @@
   border-radius: 0.5rem;
   border: 1px solid black;
   background: rgb(255, 255, 255);
+  color: black;
 }
-.sellersignup h2, .userform h2{
+.sellersignup h2,.sellersignin h2, .userform h2{
   text-align: center;
   font-size: 2.5rem;
   color: rgb(201, 197, 197);
@@ -38,7 +39,7 @@
   text-shadow: 0px 2px 5px rgb(255, 183, 0);
   margin-top: 3rem;
 }
-.sellersignup label, .userform label{
+.sellersignup label,.sellersignin label, .userform label{
   display: block;
   text-align:justify;
   margin-left: 3.2rem;
@@ -59,18 +60,18 @@
   color:rgb(0, 0, 0);
   transition: .2s ease-in-out;
 }
-.sellersignup form p a,.userform form p a{
+.sellersignup form p a, .sellersignin form p a, .userform form p a{
   text-decoration: none;
   color: rgb(255, 174, 0);
   font-weight: 500;
   text-shadow: 0px 2px 5px black;
   font-size: 1.1rem;
 }
-.sellersignup form p,.userform form p{
+.sellersignup form p, .sellersignin form p,.userform form p{
   padding-bottom: 1.2rem;
   color: rgb(255, 255, 255);
 }
-.sellersignup form p a:hover .userform form p a:hover{
+.sellersignup form p a:hover .sellersignin form p a:hover .userform form p a:hover{
   cursor: pointer;
 
 }

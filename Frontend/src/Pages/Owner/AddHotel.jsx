@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Input from "../Components/Input";
-import Select, { Option } from "../Components/Select";
-import { BACKEND_URL } from "../../config";
+import Input from "../../Components/Input";
+import Select, { Option } from "../../Components/Select";
+import { BACKEND_URL } from "../../../config";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import { useNavigate } from "react-router-dom";

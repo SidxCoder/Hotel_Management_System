@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../Components/Input";
 import styles from "./Sign.module.css";
-import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../../config";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
-const SellerSignin = ({ authType }) => {
+
+const AdminSignin = () => {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
+
   const handleChange = (type, e) => {
     setFormData({
       ...formData,
@@ -22,32 +25,32 @@ const SellerSignin = ({ authType }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${BACKEND_URL}/owner/signin`,
+        `${BACKEND_URL}/admin/signin`,
         formData
       );
       toast.success("signin Successful");
-      // localStorage.setItem("ownername",response.data.name)
       localStorage.setItem("token", response.data.token);
 
       setTimeout(() => {
-        navigate("/seller/dashboard");
+        navigate("/admin/dashboard");
       }, 2000);
     } catch (error) {
       toast.error("invalid credentials");
       console.log(error);
     }
   }
+
   return (
     <div className={` ${styles.sellersignin} bg-black min-h-screen  pt-8`}>
-      <h2>Signin</h2>
+      <h2>Admin Signin</h2>
       <form onSubmit={handleSubmit}>
         <Input
-          label="Email"
-          type="email"
-          placeholder="Enter your email"
-          onChange={(e) => handleChange("email", e)}
-          name="Email"
-          id="email"
+          label="Username"
+          type="name"
+          placeholder="Enter your username"
+          onChange={(e) => handleChange("username", e)}
+          name="username"
+          id="username"
           required
         />
         <Input
@@ -63,17 +66,12 @@ const SellerSignin = ({ authType }) => {
           className="py-1 px-2 mb-2 mt-2 text-white border-2 rounded-lg"
           type="submit"
         >
-          {" "}
-          Signin{" "}
+          Signin
         </button>
-        <p>
-          Don't have an account?{" "}
-          <a onClick={() => authType("signup")}>Sign up</a>
-        </p>
       </form>
       <Toaster />
     </div>
   );
 };
 
-export default SellerSignin;
+export default AdminSignin;

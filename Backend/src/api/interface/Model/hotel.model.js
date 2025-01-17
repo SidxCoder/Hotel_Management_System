@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
  export const fileUpload= async(file)=>{
     console.log(file.path)
     const params={
-        Bucket: "sidxcoder", 
+        Bucket: "sidxxcoder", 
         Key: file.filename,
         Body: fs.readFileSync(file.path),
       
@@ -29,9 +29,11 @@ const storage = multer.diskStorage({
         console.log(data.Location);
         
     })
-    const url = s3.getSignedUrl('getObject',{
-        Bucket: "sidxcoder",
-        Key: file.filename,
-    })
-    return url 
+    // const url = s3.getSignedUrl('getObject',{
+    //     Bucket: "sidxxcoder",
+    //     Key: file.filename,
+    // })
+    return {
+        filename :file.filename
+    }
 }

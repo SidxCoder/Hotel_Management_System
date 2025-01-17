@@ -14,6 +14,10 @@ const bookSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    rooms:{
+        type:Number,
+        require:true
+    },
     RoomType: {
         type: String,
         required: true

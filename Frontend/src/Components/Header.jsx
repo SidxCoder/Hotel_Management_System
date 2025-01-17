@@ -1,8 +1,11 @@
-import React from 'react'
-import 'typeface-roboto';
+import React from "react";
+import "typeface-roboto";
 import { FaCircleUser } from "react-icons/fa6";
-import styles from "./Header.module.css"
+import styles from "./Header.module.css";
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const Navigate = useNavigate();
+
   return (
     <div>
       <header className={`w-[100%] h-[85vh]`} data-aos="fade-down">
@@ -17,7 +20,9 @@ const Header = () => {
           <div className={`${styles.content}`}>
             <ul className="flex items-center gap-8 text-white  ">
               <li>
-                <a className='' href="">Home</a>
+                <a className="" href="">
+                  Home
+                </a>
               </li>
               <li>
                 <a href="">Destination</a>
@@ -28,11 +33,20 @@ const Header = () => {
               <li>
                 <a href="">Contact Us</a>
               </li>
-              <button
-                className={`${styles.btnL} bg-slate-200 text-black rounded font-bold`}
-              >
-                <FaCircleUser className='inline text-2xl' /> Login / Signup
-              </button>
+
+              {localStorage.getItem("token") ? (
+                <button className="w-10 h-10 rounded-full bg-blue-500 flex justify-center items-center">
+                  {localStorage.getItem("username").split("")[0]}
+                  {localStorage.getItem("username").split("")[0].toUpperCase()}
+                </button>
+              ) : (
+                <button
+                  className={`${styles.btnL} bg-slate-200 text-black rounded font-bold`}
+                  onClick={() => Navigate("auth")}
+                >
+                  <FaCircleUser className="inline text-2xl" /> Login / Signup
+                </button>
+              )}
             </ul>
           </div>
         </nav>
@@ -44,7 +58,7 @@ const Header = () => {
         </div>
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
