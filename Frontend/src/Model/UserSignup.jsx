@@ -28,6 +28,7 @@ const UserSignup = ({position}) => {
       const response = await axios.post(`${BACKEND_URL}/user/signup`, formData);
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("username",response.data.username)
+      localStorage.setItem("type","user")
       toast.success("Signup Successful");
       setTimeout(() => {
         navigate("/");
@@ -40,10 +41,11 @@ const UserSignup = ({position}) => {
 
   return (
     
-    <div className={` ${styles.userform} ${styles.Usignup}`}>
+    <div className={` ${styles.userform} ${styles.Usignup} mt-16`}>
     
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
+     
+      <form onSubmit={handleSubmit} className="shadow-lg shadow-white text-white">
+      <h2 className="text-white">Signup</h2>
         <Input
           label="Name:"
           type="text"
@@ -77,7 +79,7 @@ const UserSignup = ({position}) => {
           required
         />
         <button className={`${styles.btn}`} type="submit">Signup</button>
-        <p>
+        <p className="text-white">
         Already have an account?
          <a onClick={()=>position("signin")}> Sign in</a>
         </p>

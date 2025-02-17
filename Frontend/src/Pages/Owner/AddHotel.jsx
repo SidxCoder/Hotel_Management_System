@@ -10,7 +10,7 @@ import styles from "./AddHotel.module.css";
 const AddHotel = () => {
   const navigate = useNavigate();
   const [details, setDetails] = useState({
-    name: "",
+    hotelName: "",
     area: "",
     city: "",
     state: "",
@@ -64,7 +64,7 @@ const AddHotel = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
-    formData.append("name", details.name);
+    formData.append("hotelName", details.hotelName);
     formData.append("area", details.area);
     formData.append("city", details.city);
     formData.append("state", details.state);
@@ -98,7 +98,7 @@ const AddHotel = () => {
   return (
     <div
     
-      className={`${styles.hotelform} min-h-screen  bg-cover bg-center overflow-y-hidden  bg-gradient-to-t from-yellow-200 to-gray-300 `}
+      className={`${styles.hotelform} min-h-screen  bg-cover bg-center overflow-y-hidden w-[80vw]   bg-yellow-100`}
     >
       <Toaster />
       <h2 className="text-black text-5xl font-serif text-center my-4 font-bold selection:">
@@ -114,7 +114,7 @@ const AddHotel = () => {
               type="text"
               name="name"
               value={details.name}
-              onChange={(e) => handleChange("name", e)}
+              onChange={(e) => handleChange("hotelName", e)}
               placeholder="Enter Hotel name"
               required
             />
@@ -233,7 +233,7 @@ const AddHotel = () => {
           </div>
         </div>
         <button
-          className="w-[100%] rounded-b-lg text-white h-12 text-xl bg-green-700"
+          className="w-[100%] rounded-b-lg text-white h-12 text-xl bg-red-600"
           onClick={handleSubmit}
         >
           Register

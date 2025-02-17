@@ -126,7 +126,7 @@ const Section2 = () => {
             }
             </div>
           </div>
-          <div onClick={handleSubmit} className='h-full w-[10vh] rounded-full invert-0 flex justify-center items-center bg-yellow-600  border-black border-2'>
+          <div onClick={handleSubmit} className='h-full w-[10vh] rounded-full invert-0 flex justify-center items-center bg-orange-500  border-black '>
             <FaSearch className='w-6 h-6 text-black'  />
           </div>
           

@@ -18,8 +18,8 @@ body {
 
  .content li:hover{   
     cursor: pointer;
-    color: rgb(255, 255, 255);
-    text-shadow: 0 2px 5px rgb(167, 157, 157);
+    /* color: rgb(255, 255, 255);
+    text-shadow: 0 2px 5px rgb(167, 157, 157); */
 }
 .landing nav{
     position: sticky;

@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^5.1.0",
+    "@lottiefiles/dotlottie-react": "^0.12.3",
     "@reduxjs/toolkit": "^2.5.0",
     "aos": "^2.3.4",
     "axios": "^1.7.8",
     "bootstrap": "^5.3.3",
     "date-fns": "^4.1.0",
     "icons": "^1.0.0",
+    "jwt-decode": "^4.0.0",
     "react": "^18.3.1",
     "react-date-range": "^2.0.1",
     "react-datepicker": "^7.5.0",
@@ -27,6 +29,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^7.0.1",
     "react-slick": "^0.30.2",
+    "redux-observable": "^3.0.0-rc.2",
     "slick-carousel": "^1.8.1",
     "sonner": "^1.7.0",
     "typeface-roboto": "^1.1.13"

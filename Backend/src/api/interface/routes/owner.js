@@ -1,6 +1,6 @@
 import authMiddleware from "../../lib/authMiddleware.js";
 import { addHotel, updateHotel } from "../controller/hotel_controller.js";
-import { myHotels, ownerSignin,ownerSignup } from "../controller/owner_controller.js";
+import { hotelBookings, myHotels, ownerSignin,ownerSignup } from "../controller/owner_controller.js";
 import { upload } from "../Model/hotel.model.js";
 
 export default function ownerRouter(router)
@@ -9,6 +9,7 @@ export default function ownerRouter(router)
     router.post("/owner/signup",ownerSignup)
     router.post("/owner/signin",ownerSignin)
     router.post("/owner/addhotel",multiple,addHotel)
-    router.put("/owner/updatehotel",authMiddleware,updateHotel)
-    router.get("/owner/myhotels", authMiddleware,myHotels)
+    router.put("/owner/updatehotel/:id",authMiddleware,updateHotel)
+    router.get("/owner/bookings",authMiddleware,hotelBookings)
+    router.get("/owner/myhotels/:id", authMiddleware,myHotels)
 }

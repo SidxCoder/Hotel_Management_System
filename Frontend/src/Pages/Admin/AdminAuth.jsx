@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminSignin from '../../Model/AdminSignin'
+import AdminSignin from '../../Model/Admin/AdminSignin'
 const AdminAuth = () => {
   return (
     <div>

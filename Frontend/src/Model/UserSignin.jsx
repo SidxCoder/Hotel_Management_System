@@ -24,8 +24,10 @@ const UserSignin = ({position}) => {
     e.preventDefault();
    try {
       const response = await axios.post(`${BACKEND_URL}/user/signin`,formData)
+      console.log(response.data)
       localStorage.setItem("token",response.data.token)
       localStorage.setItem("username",response.data.username)
+      localStorage.setItem("type","user")
       toast.success("Signin Successful");
       setTimeout(()=>{
         navigate("/")
@@ -39,9 +41,10 @@ const UserSignin = ({position}) => {
 
   return (
    
-      <div className={` ${styles.userform} ${styles.Usignin}`}>
-        <h2>Signin</h2>
-        <form onSubmit={handleSubmit}>
+      <div className={` ${styles.userform} ${styles.Usignin} mt-24 `}>
+       
+        <form onSubmit={handleSubmit} className="shadow-lg shadow-white text-white">
+        <h2 className="text-white">Signin</h2>
           <Input
             label="Email:"
             type="email"
@@ -58,8 +61,8 @@ const UserSignin = ({position}) => {
             placeholder="Enter your password"
             required
           />
-          <button className={`${styles.btn}`} type="submit">Signin</button>
-          <p>
+          <button className={`${styles.btn} text-white`} type="submit">Signin</button>
+          <p className="text-white">
             Don't have an account?
             <a onClick={()=>position("signup")}> Sign up</a>
           </p>

@@ -1,9 +1,10 @@
-import { adminSignin,AllBookings,AllHotels,deleteHotel,sendWarning } from "../controller/admin_controller.js";
-
+import { AddAdmin, adminSignin,AllBookings,AllHotels,deleteHotel,sendWarning } from "../controller/admin_controller.js";
+import authMiddleWare from "../../lib/authMiddleware.js"
 export default function adminRouter(router){
     router.post("/admin/signin",adminSignin)
     router.get("/admin/getallbookings",AllBookings)
     router.get("/admin/allhotels",AllHotels)
     router.delete("/admin/deleteHotel",deleteHotel)
     router.post("/admin/sendWarning",sendWarning)
+    router.post("admin/add",authMiddleWare,AddAdmin)
 }

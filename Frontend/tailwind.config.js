@@ -8,6 +8,10 @@ export default {
         'Auth-bg':"url('/image (2).jpg')",
         'landing-bg':"url('/landing2.jpeg')",
         'register-bg': "url('/register.avif')",
+        'sign-bg':"url('/Sign.webp')",
+        'add-hotel-bg':"url(/ADH.webp)",
+        'admin-s-bg':"url(/adminbg.avif)",
+        'ubook-bg':"url(/book.avif)",
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

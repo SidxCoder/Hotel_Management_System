@@ -8,7 +8,6 @@ AWS.config.update({
     region: 'ap-south-1' 
 });
 
-
 export const s3 = new AWS.S3()
 async function dbConnection(){
     await mongoose .connect(env.MONGO_URL)

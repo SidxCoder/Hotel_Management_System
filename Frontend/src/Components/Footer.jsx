@@ -7,7 +7,7 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <footer className=' font-poppins'>
+      <footer id='Foot' className=' font-poppins'>
         <div className="foot_content flex text-left justify-center gap-20 py-10 text-gray-300 bg-black">
             <div className={`part1 leading-6 `}data-aos="fade-up">
                 <h2 className='font-medium text-xl  mb-4'>RoomI<span className='text-red-700'>Q</span></h2>

@@ -26,9 +26,10 @@ const SellerSignin = ({ authType }) => {
         formData
       );
       toast.success("signin Successful");
-      // localStorage.setItem("ownername",response.data.name)
+      console.log(response.data)
+      localStorage.setItem("ownername",response.data.ownername)
       localStorage.setItem("token", response.data.token);
-
+      localStorage.setItem("type","owner")
       setTimeout(() => {
         navigate("/seller/dashboard");
       }, 2000);
@@ -38,9 +39,10 @@ const SellerSignin = ({ authType }) => {
     }
   }
   return (
-    <div className={` ${styles.sellersignin} bg-black min-h-screen  pt-8`}>
-      <h2>Signin</h2>
-      <form onSubmit={handleSubmit}>
+    <div className={` ${styles.sellersignin}  bg-sign-bg bg-cover bg-center min-h-screen  pt-8`}>
+      
+      <form onSubmit={handleSubmit} className="shadow-lg shadow-black bg-yellow-100 brightness-95 text-black    absolute top-44 right-[15%]">
+      <h2 className=" text-gray-800" >Signin</h2>
         <Input
           label="Email"
           type="email"
@@ -60,18 +62,25 @@ const SellerSignin = ({ authType }) => {
           required
         />
         <button
-          className="py-1 px-2 mb-2 mt-2 text-white border-2 rounded-lg"
+          className="py-1 px-4 w-[70%] mb-2 mt-2 text-white bg-red-600 border-2 rounded-lg"
           type="submit"
         >
-          {" "}
-          Signin{" "}
+          
+          Signin
         </button>
-        <p>
-          Don't have an account?{" "}
-          <a onClick={() => authType("signup")}>Sign up</a>
+        <p className="text-black">
+          Don't have an account?
+          <a onClick={() => authType("signup")}> Sign up</a>
         </p>
       </form>
       <Toaster />
+
+      <h1 className="text-5xl absolute left-10 font-extrabold text-neutral-800" >RoomI<span className="text-red-700 ">Q</span></h1>
+
+      <div className="absolute left-[15%] top-[30%] w-[40%]">
+        <h1 className=" w-[95%] text-yellow-100 text-5xl font-bold " >There’s a smarter way to RoomI<span className="text-red-700">Q</span> around </h1>
+        <p className="w-[90%] font-bold text-yellow-100 text-md mt-3">Sign up with your phone number and get exclusive access to discounts and savings on RoomI<span className="text-red-700">Q</span> stays and with our many travel partners.</p>
+      </div>
     </div>
   );
 };

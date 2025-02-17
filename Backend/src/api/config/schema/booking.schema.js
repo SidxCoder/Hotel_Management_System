@@ -18,6 +18,10 @@ const bookSchema = new mongoose.Schema({
         type:Number,
         require:true
     },
+    bill:{
+        type:Number,
+        required:true
+    },
     RoomType: {
         type: String,
         required: true
